@@ -49,19 +49,13 @@ hybrid_search
 
 ### Setup Instructions
 
-#### 1. Clone the repository
-```bash
-git clone https://github.com/Rohitjakkam/hybrid_search_engine.git
-cd hybrid_search_engine
-```
-
-#### 2. Install required packages
+#### 1. Install required packages
 Install the necessary Python libraries:
 ```bash
 pip install -r requirements.txt
 ```
 
-#### 3. Set up the MySQL database
+#### 2. Set up the MySQL database
 - Create a MySQL database using the `products.sql` script:
 ```sql
 # create database
@@ -86,7 +80,7 @@ INSERT INTO products (name, price, category, description) VALUES
 ('Bluetooth Speaker', 89.99, 'Electronics', 'Portable Bluetooth speaker with high-quality sound.');
 ```
 
-#### 4. Configure the `config.ini` file
+#### 3. Configure the `config.ini` file
 Edit the `config.ini` file with your MySQL and ChromaDB credentials:
 ```ini
 [mysql]
@@ -103,13 +97,13 @@ chroma_directory = chroma_db
 embedding_model = all-MiniLM-L6-v2
 ```
 
-#### 5. Generate embeddings for semantic search
+#### 4. Generate embeddings for semantic search
 Run the following script to generate embeddings for the product descriptions and store them in ChromaDB:
 ```bash
 python scripts/create_embeddings.py
 ```
 
-#### 6. Run the application
+#### 5. Run the application
 Start the Streamlit application by running the following command:
 ```bash
 streamlit run main.py
